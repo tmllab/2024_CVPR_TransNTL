@@ -18,8 +18,7 @@ def auto_save_name(config):
 
 
 if __name__ == '__main__':
-    # wandb.init(project='TransNTL', config='config/cifarstl/attack.yml')
-    wandb.init(project='TransNTL', config='config/visda/attack.yml')
+    wandb.init(project='TransNTL', config='config/cifarstl/attack.yml')
     config = wandb.config
     setup_seed(config.seed)
 

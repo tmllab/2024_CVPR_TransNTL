@@ -1,5 +1,5 @@
 # TransNTL
-Pytorch implementation of CVPR 2024 Highlight paper "Your Transferability Barrier is Fragile: Free-Lunch for Transferring the Non-Transferable Learning."
+This repository contains a Pytorch implementation of CVPR 2024 Highlight paper "Your Transferability Barrier is Fragile: Free-Lunch for Transferring the Non-Transferable Learning." (still under updating...)
 
 ## Usage
 
