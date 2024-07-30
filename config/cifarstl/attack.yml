@@ -1,0 +1,120 @@
+#########################################
+# basic parameters
+#########################################
+device:
+  value: cuda:0
+task_name:
+  # value: tNTL
+  value: tCUTI
+domain_src:
+  value: cifar
+domain_tgt:
+  value: stl
+patch_value:
+  value: default
+image_size:
+  value: 64
+num_classes:
+  value: 10
+
+seed:
+  value: 2023
+batch_size:
+  value: 32
+num_workers:
+  value: 16
+
+pre_split:
+  value: True
+data_transform:
+  value: ntl
+
+#########################################
+# parameters for training SL/NTL models
+#########################################
+teacher_network:
+  value: vgg13
+teacher_pretrain:
+  value: True
+  # value: False
+train_teacher_scratch:
+  # value: True
+  value: False
+save_train_teacher:
+  value: True
+  # value: False
+pretrained_teacher:
+  value: auto
+pretrain_epochs:
+  value: 30
+pretrain_lr:
+  value: 0.001
+pretrain_momentum:
+  value: 0.9
+pretrain_weight_decay:
+  value: 0.0001
+#########################################
+# additional parameters for NTL
+#########################################
+NTL_alpha:
+  value: 0.1
+NTL_beta:
+  value: 0.1
+#########################################
+# additional parameters for CUTI
+#########################################
+CUTI_alpha:
+  value: 0.1
+
+
+#########################################
+# parameters for training surrogate model
+#########################################
+surrogate_network:
+  value: vgg13
+surrogate_pretrain:
+  value: True
+  # value: False
+train_surrogate_scratch:
+  value: True
+  # value: False
+how_to_train_surrogate:
+  value: TransNTL
+  # value: FT_FTAL
+  # value: FT_RTAL
+save_train_surrogate:
+  # value: True
+  value: False
+pretrained_surrogate:
+  value: auto
+surrogate_data_percen:
+  value: 0.1
+surrogate_epochs:
+  value: 400
+surrogate_lr:
+  value: 0.0001
+surrogate_momentum:
+  value: 0.9
+surrogate_weight_decay:
+  value: 0.0001
+
+
+#########################################
+# TransNTL
+#########################################
+dshift_gaussian_std:
+  value: 0.2
+dshift_blur_ks:
+  value: 5
+loss_crpt_weight:
+  value: 0.1
+dshift_scheduler:
+  # value: True
+  value: False
+dshift_scheduler_type:
+  value: StepLR
+  # value: CosineAnnealingLR
+dshift_sam_rho:
+  value: 0.5
+dshift_group_Temp:
+  value: 1.0
