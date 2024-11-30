@@ -49,7 +49,7 @@ def loss_function(config, labels, imgs, imgs_crpt_list, model_ntl,
     clean_out = model_ntl(imgs)
     crpt_out_list = [model_ntl(imgs_crpt) for imgs_crpt in imgs_crpt_list]
     # compute CE loss
-    loss_clean_CE = criterion(F.log_softmax(clean_out, dim=1), labels)
+    loss_clean_CE = criterion(clean_out, labels)
     # KD loss
     clean_out_dt = clean_out.detach()
     loss_crpt_list = [kld_criterion(crpt_out, clean_out_dt) for crpt_out in crpt_out_list]

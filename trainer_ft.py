@@ -29,7 +29,6 @@ def train_src(config, dataloaders, valloaders, testloaders, model, print_freq=0,
             labels = labels_src.to(config.device)
             labels = torch.argmax(labels, dim=1)
             output = model(imgs)
-            output = F.log_softmax(output, dim=1)
             loss = criterion(output, labels)
             optimizer.zero_grad()
             loss.backward()
